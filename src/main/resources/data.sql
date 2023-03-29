@@ -22,7 +22,3 @@ INSERT INTO CLIENT(id, name) VALUES (3, 'Sara');
 
 INSERT INTO LOAN(id, client_id, game_id, begin, end) VALUES (1, 1, 1, '2020-01-01', '2020-01-15');
 INSERT INTO LOAN(id, client_id, game_id, begin, end) VALUES (2, 1, 2, '2020-01-01', '2020-01-15');
-INSERT INTO LOAN(id, client_id, game_id, begin, end) VALUES (3, 3, 1, '2020-01-16', '2020-01-27');
-INSERT INTO LOAN(id, client_id, game_id, begin, end) VALUES (4, 2, 3, '2020-02-01', '2020-02-15');
-INSERT INTO LOAN(id, client_id, game_id, begin, end) VALUES (5, 3, 4, '2020-06-01', '2020-06-15');
-INSERT INTO LOAN(id, client_id, game_id, begin, end) VALUES (6, 2, 3, '2020-02-16', '2020-02-27');
