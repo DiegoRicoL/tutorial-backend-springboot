@@ -12,6 +12,15 @@ import com.ccsw.tutorial.category.model.CategoryDto;
 public interface CategoryService {
 
     /**
+     * Recupera una {@link com.ccsw.tutorial.category.model.Category} a partir de su
+     * ID
+     * 
+     * @param id
+     * @return
+     */
+    Category get(Long id);
+
+    /**
      * Método para recuperar todas las
      * {@link com.ccsw.tutorial.category.model.Category}
      * 

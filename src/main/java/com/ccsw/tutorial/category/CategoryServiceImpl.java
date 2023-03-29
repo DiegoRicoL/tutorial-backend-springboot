@@ -22,6 +22,15 @@ public class CategoryServiceImpl implements CategoryService {
      * {@inheritDoc}
      */
     @Override
+    public Category get(Long id) {
+
+        return this.categoryRepository.findById(id).orElse(null);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public List<Category> findAll() {
 
         return (List<Category>) this.categoryRepository.findAll();
@@ -38,7 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
         if (id == null)
             categoria = new Category();
         else
-            categoria = this.categoryRepository.findById(id).orElse(null);
+            categoria = this.get(id);
 
         categoria.setName(dto.getName());
 

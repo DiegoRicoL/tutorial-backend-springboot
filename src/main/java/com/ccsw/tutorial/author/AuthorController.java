@@ -1,5 +1,7 @@
 package com.ccsw.tutorial.author;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ccsw.tutorial.author.model.Author;
 import com.ccsw.tutorial.author.model.AuthorDto;
 import com.ccsw.tutorial.author.model.AuthorSearchDto;
 import com.ccsw.tutorial.config.mapper.BeanMapper;
@@ -63,5 +66,18 @@ public class AuthorController {
     public void delete(@PathVariable("id") Long id) {
 
         this.authorService.delete(id);
+    }
+
+    /**
+     * Recupera un listado de autores
+     * 
+     * @return
+     */
+    @RequestMapping(path = "", method = RequestMethod.GET)
+    public List<AuthorDto> findAll() {
+
+        List<Author> authors = this.authorService.findAll();
+
+        return this.beanMapper.mapList(authors, AuthorDto.class);
     }
 }
